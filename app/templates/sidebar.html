@@ -1,0 +1,136 @@
+<ul class="navbar-nav bg-gradient-success  sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">SIAMA <sup>0.1</sup></div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" href="{{url_for('radmin.dashboard')}}">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Data Santri
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.tambah_santri')}}">
+      <i class="fas fa-fw fa-users"></i>
+      <span>Tambah Data Santri</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.lihat_santri')}}">
+      <i class="fas fa-fw fa-users"></i>
+      <span>Lihat Data Santri</span>
+    </a>
+  </li>
+  <!-- Divider -->
+  <!-- <hr class="sidebar-divider"> -->
+
+  <!-- Keuangan Sidebar -->
+  <!-- <div class="sidebar-heading">
+    Keuangan
+  </div>
+
+  <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-money-check-alt"></i>
+          <span>Master Keuangan</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="#">Lihat Data</a>
+            <a class="collapse-item" href="#">Tambah Data</a>
+          </div>
+        </div>
+    </li> -->
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Pembayaran Syariah
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.tambah_syariah')}}">
+      <i class="fas fa-fw fa-cash-register"></i>
+      <span>Transaksi</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.lihat_bayar')}}">
+      <i class="fas fa-fw fa-cash-register"></i>
+      <span>Lihat Data Pembayaran</span>
+    </a>
+  </li>
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Tahun Ajaran
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.tambah_ajaran')}}">
+      <i class="fas fa-fw fa-calendar-alt"></i>
+      <span>Tambah Tahun Ajaran</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('radmin.lihat_ajaran')}}">
+      <i class="fas fa-fw fa-calendar-alt"></i>
+      <span>Lihat Tahun Ajaran</span>
+    </a>
+  </li>
+
+  <!-- Divider -->
+  <!-- <hr class="sidebar-divider"> -->
+
+  <!-- Heading -->
+  <!-- <div class="sidebar-heading">
+    Data pesantren
+  </div> -->
+  <!-- Nav Item - Pages Collapse Menu -->
+  <!-- <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Data Pesantren</span>
+        </a>
+        <div id="collapse6" class="collapse" aria-labelledby="heading5" data-parent="#accordionSidebar" style="">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/edit_pes">Lihat Data</a>
+          </div>
+        </div>
+    </li> -->
+  <!-- Nav Item - Charts -->
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+
+</ul>

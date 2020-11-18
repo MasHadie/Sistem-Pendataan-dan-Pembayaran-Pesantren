@@ -1,0 +1,142 @@
+{% include "head.html" %}
+
+<title>SIAMA - Edit Users</title>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+  {% include "sidebar.html" %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% include "nav.html" %}
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h3 mb-0 text-gray-800">Edit Data Users</h3>
+          </div>
+
+          <!-- Content Row -->
+
+          <!-- AREA  BAR -->
+          <div class="row">
+            <div class="col-xl-12 col-lg-7">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                      <h6 class="m-0 font-weight-bold text-primary">Edit Data Users</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse show" id="collapseCardExample">
+                      <div class="card-body">
+                        <!--Flashing -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{category}}">
+                            {{message}}
+                          </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <form action="{{url_for('radmin.edit_user')}}" method="POST">
+                          {{form.hidden_tag()}}
+
+                            <div class="form-group">
+                              {{form.username.label(class="form-control-label")}}
+                              {{form.username(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                              {{form.email.label(class="form-control-label")}}
+                              {% if form.email.errors %}
+                                  {{form.email(class="form-control is-invalid")}}
+                                  <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                    <span>{{error}}</span>
+                                    {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{form.email(class="form-control")}}
+                              {% endif %}
+                            </div>
+                            <div class="form-group">
+                              {{form.password.label(class="form-control-label")}}
+                              {% if form.password.errors %}
+                                  {{form.password(class="form-control is-invalid")}}
+                                  <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                    <span>{{error}}</span>
+                                    {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{form.password(class="form-control")}}
+                              {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <!-- {{form.password.label(class="form-control-label")}} -->
+                                {% if form.konf_pass.errors %}
+                                    {{form.konf_pass(class="form-control form-control-user is-invalid")}}
+                                    <div class="invalid-feedback">
+                                      {% for error in form.konf_pass.errors %}
+                                      <span>{{error}}</span>
+                                      {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{form.konf_pass(class="form-control form-control-user ", placeholder="Ulangi password")}}
+                                {% endif %}
+                            </div>
+                            {{form.submit(class="btn btn-success")}}
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+
+        <!-- END BAR -->
+
+
+          <!-- Content Row -->
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Mas Hadie 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+  {% include "footer.html" %}

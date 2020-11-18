@@ -1,0 +1,133 @@
+{% include "head.html" %}
+
+<title>SIAMA - Tambah Santri</title>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+  {% include "sidebar.html" %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% include "nav.html" %}
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h3 mb-0 text-gray-800">Tambah Data Santri</h3>
+          </div>
+
+          <!-- Content Row -->
+
+          <!-- AREA  BAR -->
+          <div class="row">
+            <div class="col-xl-12 col-lg-7">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                      <h6 class="m-0 font-weight-bold text-primary">Tambah Data Santri</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse show" id="collapseCardExample">
+                      <div class="card-body">
+                        <form action="/tambah_santri" method="POST">
+                            <div class="form-group">
+                                {{form.nis.label(class="col-form-label")}}
+                                {{form.nis(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.nama_l.label(class="col-form-label")}}
+                                {{form.nama_l(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.jenis_k.label(class="col-form-label")}}
+                                {{form.jenis_k(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.tmpt_l.label(class="col-form-label")}}
+                                {{form.tmpt_l(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.tgl_l.label(class="col-form-label")}}
+                                {{form.tgl_l(class="form-control", id="datepicker")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.alamat.label(class="col-form-label")}}
+                                {{form.alamat(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.th_ajar.label(class="col-form-label")}}
+                                {{form.th_ajar(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.ortu.label(class="col-form-label")}}
+                                {{form.ortu(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.no_hp.label(class="col-form-label")}}
+                                {{form.no_hp(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.status.label(class="col-form-label")}}
+                                {{form.status(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.th_masuk.label(class="col-form-label")}}
+                                {{form.th_masuk(class="form-control")}}
+                            </div>
+                            <div class="form-group">
+                                {{form.submit(class="btn btn-success")}}
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+
+        <!-- END BAR -->
+
+
+          <!-- Content Row -->
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Mas Hadie 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+  {% include "footer.html" %}

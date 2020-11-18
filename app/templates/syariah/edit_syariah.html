@@ -1,0 +1,138 @@
+{% include "head.html" %}
+
+<title>SIAMA - Bayar Syariah</title>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+  {% include "sidebar.html" %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% include "nav.html" %}
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h3 mb-0 text-gray-800">Edit Pembayaran Syariah</h3>
+          </div>
+
+          <!-- Content Row -->
+
+          <!-- AREA  BAR -->
+          <!-- <a href="/lihat_bayar" class="btn btn-success">Cek Bayar</a> -->
+          <!-- <div class="row">
+            <div class="col-xl-6 col-lg-7">
+              <form action="/tambah_syariah" method="post">
+                <input type="text" class="form-control" name="nomor">
+                <button type="submit" name="button" class="btn btn-success">cari</button>
+              </form>
+            </div>
+          </div>
+          <br> -->
+          <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                      <h6 class="m-0 font-weight-bold text-primary">Edit Pembayaran Syariah</h6>
+                    </a>
+
+                    <div class="collapse show" id="collapseCardExample">
+                      <div class="card-body">
+                        <!--Flashing -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{category}}">
+                            {{message}}
+                          </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <form action="/edit_syariah" method="POST">
+                            <div class="form-group">
+                              <label for="">NIS</label>
+                              <input type="hidden" name="id" value="{{ syariah.id }}">
+                              <input type="text"  class="form-control"  value="{{syariah.nis}}" name="nis" readonly>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Nama Santri</label>
+                              <input type="text" class="form-control"  value="{{syariah.nama_santri}}" name="nama_santri" readonly>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Bulan Bayar</label>
+                              <input type="text" class="form-control" name="bulan"  value="{{syariah.bulan}}" id=bulanbayar required>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Tanggal Bayar</label>
+                              <input type="text" class="form-control" name="tgl_bayar" value="{{syariah.tgl_bayar}}" id="tglbayar" required>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Tahun Ajaran</label>
+                                <select class="form-control" name="thn_ajaran">
+                                  {% for ajar in ajar%}
+                                  <option value="{{ajar.nama_ajar}}/{{ajar.ket_ajar}}">{{ajar.nama_ajar}}/{{ajar.ket_ajar}}</option>
+                                  {%endfor%}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Jumlah Bayar</label>
+                              <input type="text" class="form-control" name="jml_bayar" id="bayar" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Ubah</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          <!-- ROW BARU INI -->
+
+
+        <!-- END BAR -->
+
+
+          <!-- Content Row -->
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Mas Hadie 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+  {% include "footer.html" %}
